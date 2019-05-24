@@ -41,7 +41,8 @@ module.exports = (env, argv) => {
       }),
       new webpack.HotModuleReplacementPlugin(),
       new HtmlWebpackPlugin({
-        title: 'PMKro'
+        title: 'P Kroeker Home',
+        favicon: 'favicon.ico',
       }),
     ],
     resolve: {
