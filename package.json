@@ -1,0 +1,22 @@
+{
+  "name": "pmkroeker.github.io",
+  "version": "1.0.0",
+  "description": "Blog",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pmkroeker/pmkroeker.github.io.git"
+  },
+  "author": "Peter Kroeker",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pmkroeker/pmkroeker.github.io/issues"
+  },
+  "homepage": "https://github.com/pmkroeker/pmkroeker.github.io#readme",
+  "dependencies": {
+    "preact-cli": "^3.0.0-rc.1"
+  }
+}
