@@ -11,15 +11,15 @@ module.exports = (env, argv) => {
   const compressArgs = argv.mode === 'production' ? { 'drop_console': true } : false;
   const cssNamespacing = argv.mode !== 'production' ? '[path][local]' : '[folder][hash]';
   const chunkName = argv.mode !== 'production' ? '[name].' : '[chunkhash].';
-  const cleanPatterns = argv.mode !== 'production' ? ['*.dev.*'] : ['**/*', '!*.dev.*'];
+  const cleanPatterns = ['*.js', '!*.config.js', '*.css', '!node_modules/**'];
 
   return {
     entry: `${__dirname}/src/index.tsx`,
     output: {
       filename: 'index.js',
       chunkFilename: chunkName + 'js',
-      publicPath: '/docs',
-      path: `${__dirname}/docs`,
+      publicPath: '/',
+      path: `${__dirname}/`,
     },
     devServer: {
       contentBase: __dirname,
