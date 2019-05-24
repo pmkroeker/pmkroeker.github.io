@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "target": "es2017",
+        "lib": [
+            "dom",
+            "esnext",
+            "esnext.array"
+        ],
+        "module": "esnext",
+        "moduleResolution": "node",
+        "incremental": true,
+        "strict": true,
+        "alwaysStrict": true,
+        "removeComments": false,
+        "sourceMap": true,
+        "experimentalDecorators": true,
+        "jsx": "react",
+        "jsxFactory": "h"
+    },
+    "include": [
+        "./**/*.tsx",
+        "./**/*.ts"
+    ]
+}
