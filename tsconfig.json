@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+        "baseUrl": "src",
         "target": "es2017",
         "lib": [
             "dom",
@@ -18,7 +19,7 @@
         "jsxFactory": "h"
     },
     "include": [
-        "./**/*.tsx",
-        "./**/*.ts"
+        "./src/**/*.tsx",
+        "./src/**/*.ts"
     ]
 }

@@ -5,12 +5,11 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = (env, argv) => {
   const compressArgs = argv.mode === 'production' ? { 'drop_console': true } : false;
-  const mode = argv.mode === 'production' ? 'bundle' : 'dev';
-  const cssNamespacing = mode === 'dev' ? '[path][local]' : '[folder][hash]';
-  const outputPath = './dist/';
+  const cssNamespacing = argv.mode !== 'production' ? '[path][local]' : '[folder][hash]';
   const chunkName = argv.mode !== 'production' ? '[name].' : '[chunkhash].';
   const cleanPatterns = argv.mode !== 'production' ? ['*.dev.*'] : ['**/*', '!*.dev.*'];
 
@@ -19,8 +18,12 @@ module.exports = (env, argv) => {
     output: {
       filename: 'index.js',
       chunkFilename: chunkName + 'js',
-      publicPath: '/src/',
-      path: path.resolve(__dirname, outputPath),
+      publicPath: '/docs',
+      path: `${__dirname}/docs`,
+    },
+    devServer: {
+      contentBase: __dirname,
+      hot: true
     },
     plugins: [
       new CleanWebpackPlugin({
@@ -35,6 +38,10 @@ module.exports = (env, argv) => {
       }),
       new OptimizeCssAssetsPlugin({
         assetNameRegExp: /.css$/g,
+      }),
+      new webpack.HotModuleReplacementPlugin(),
+      new HtmlWebpackPlugin({
+        title: 'PMKro'
       }),
     ],
     resolve: {
