@@ -48,6 +48,10 @@ module.exports = (env, argv) => {
     resolve: {
       extensions: ['.ts', '.tsx', '.js', '.css'],
       plugins: [new TsconfigPathsPlugin({ configFile: path.resolve(__dirname, 'tsconfig.json') })],
+      alias: {
+        'react': 'preact/compat',
+        'react-dom': 'preact/compat',
+      }
     },
     module: {
       rules: [

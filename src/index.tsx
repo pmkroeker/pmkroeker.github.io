@@ -1,14 +1,15 @@
-import { h, render, Component, JSX } from 'preact';
+/* eslint-disable react/react-in-jsx-scope */
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 import * as style from './style.scss';
-class App extends Component {
+class App extends React.Component {
   public render (): JSX.Element {
     return (
-      <div class={style.root}>
+      <div className={style.root}>
         New
-        <button>Click Me</button>
       </div>
     );
   }
 }
 
-render(<App />, document.body);
+ReactDOM.render(<App />, document.body);
