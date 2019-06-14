@@ -16,10 +16,11 @@
         "sourceMap": true,
         "experimentalDecorators": true,
         "jsx": "react",
-        "jsxFactory": "React.createElement"
+        "jsxFactory": "h"
     },
     "include": [
         "./src/**/*.tsx",
-        "./src/**/*.ts"
+        "./src/**/*.ts",
+        "global.d.ts"
     ]
 }
