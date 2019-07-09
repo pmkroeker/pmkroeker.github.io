@@ -1,19 +1,17 @@
 /* eslint-disable react/react-in-jsx-scope */
 // import * as React from 'preact/compat';
-import { JSX, h } from 'preact';
+import { createElement, Component } from 'react';
+import { render } from 'react-dom';
+import { Grommet } from 'grommet';
 
-const Test = (): JSX.Element => <div test='this is a test'></div>;
-// import * as ReactDOM from 'react-dom';
-// import * as style from './style.scss';
-// import { Entry } from './Entry';
-// class App extends React.Component {
-//   public render (): JSX.Element {
-//     return (
-//       <div class={style.root}>
-//         <Entry />
-//       </div>
-//     );
-//   }
-// }
+class App extends Component {
+  public render (): JSX.Element {
+    return (
+      <Grommet plain>
+        <button>Click Click</button>
+      </Grommet>
+    );
+  }
+}
 
-// React.render(<App />, document.body);
+render(<App />, document.getElementById('app') as HTMLElement);

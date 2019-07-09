@@ -43,6 +43,7 @@ module.exports = (env, argv) => {
       new HtmlWebpackPlugin({
         title: 'P Kroeker Home',
         favicon: 'favicon.ico',
+        template: './index.html'
       }),
     ],
     resolve: {
@@ -108,7 +109,7 @@ module.exports = (env, argv) => {
             nameCache: null,
             ie8: false,
             'keep_classnames': false,
-            'keep_fnames': false,
+            'keep_fnames': true,
             safari10: false,
           }
         }),
